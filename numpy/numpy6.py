@@ -25,3 +25,4 @@ print(arr_slice)
 
 arr_slice[1] = 22
 print(arr) #The changes are reflected in the original array
+
