@@ -6,8 +6,8 @@ CREATING ndarrays by using array functions
 Problem 4)
 Using a list to create ndarray
 '''
-
 import numpy as np
+
 data1 = [4.5, 6.7, 1]
 arr1 = np.array(data1) # array function used to create ndarray from a list
 print(arr1)
@@ -72,14 +72,14 @@ print(arr8)
 
 
 '''
-Problem 11)
+Problem 12)
 create an ndarray with ones on the 3rd lower diagonal and zeros elsewhere containg 10 rows, 9 columns and data type float
 '''
 arr9 = np.eye(10,9,-3,dtype=float) # -3 refers to the third lower diagonal
 print(arr9)
 
 '''
-Problem 12)
+Problem 13)
 create an ndarray with ones on the 6th upper diagonal and zeros elsewhere containg 10 rows, 10 columns and data type int
 '''
 
@@ -87,7 +87,7 @@ arr10 = np.eye(10,10,6,dtype = int)
 print(arr10)
 
 '''
-Problem 13) 
+Problem 14) 
 create an ndarray with 3 rows with cells having value 2.9 and store the data in C-contiguous order in memory
 '''
 
@@ -95,14 +95,14 @@ arr11 = np.full(3,2.9,dtype=float,order='C')
 print(arr11)
 
 '''
-Problem 13) 
+Problem 15) 
 create an ndarray with 7 rows and 13 columns with cells having value 6 and store the data in Fortran-contiguous order in memory
 '''
 arr12 = np.full((7,13), 6, dtype = int,order = 'F')
 print(arr12)
 
 '''
-Problem 14)
+Problem 16)
 Using arr12 above create identical shaped array but this time with all the cells filled with value 8.75
 '''
 
@@ -110,10 +110,13 @@ arr13 = np.full_like(arr12,8.75,dtype=float)
 print(arr13)
 
 '''
-Problem 15)
+Problem 17)
 Create an identity matrix of size 13 X 13 with all cells treated as an integer value
 '''
 
 arr14 = np.identity(13,dtype = int)
+
+# dtype is a special object containing information the ndarray needs to interpret a chunk of memory as a particular type of data
+# dtype in short is the metadata (data about data)
 print(arr14)
 
