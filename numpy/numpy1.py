@@ -85,3 +85,9 @@ for _ in range(10):
 end = time.time()
 
 print(end - start) # prints the time to execute the multiplication using python list
+
+# The above operation happens in about 12 secs approximately
+
+# Thus the numpy array is faster in comparison to the python list operation (12 / 0.5) = 24 times
+
+# The numbers will differ on your machine depending upon memory
