@@ -57,7 +57,7 @@ Problem 1)
 TO check the performance difference of a Numpy array and the equivalent python list of 10 million integers
 '''
 
-my_arr = np.arange(10000000)
+my_arr = np.arange(10000000) # arange is a built-in method that returns ndarray
 
 my_list = list(range(10000000))
 
@@ -71,6 +71,7 @@ for _ in range(10):
 
 end = time.time()
 
+# run the program in python terminal to see the result
 print(end - start) # prints the time to execute the multiplication using numpy array
 
 # The above operation happens in about 0.5 secs approximately
@@ -84,6 +85,7 @@ for _ in range(10):
 
 end = time.time()
 
+# run the program in python terminal to see the result
 print(end - start) # prints the time to execute the multiplication using python list
 
 # The above operation happens in about 12 secs approximately
