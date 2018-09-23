@@ -99,3 +99,8 @@ Similarly, I can select the third column but only the first two rows
 '''
 print(arr2d[:2, 2])
 
+'''
+ Note that a colon by itself means to take the entire axis, so you can slice only higher dimensional axes by doing
+
+'''
+print(arr2d[:, :1])
