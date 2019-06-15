@@ -106,9 +106,10 @@ class QueueArray:
         """ Adds an element to the back of the queue"""
         if self._size == len(self._queue):
             self._resize(2*len(self._queue)) # double the array size
+            
 
     def _resize(self,capacity):
-        
+
 
 
 
