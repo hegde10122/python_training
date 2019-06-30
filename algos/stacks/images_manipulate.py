@@ -11,28 +11,35 @@ def count_lines(h1):
     print("Number of lines:")
     print(num_lines)
 
-path_file = 'E:\\ganesh\\python\\parrots.JPG'
-path =  'E:\\ganesh\\python\\'   
-path1 =  'E:\\ganesh'       
+path_file = 'E:\\ganesh\\python_training_git\\python_training\\algos\\stacks\\nice.png'
+path =  'E:\\ganesh\\python_training_git\\python_training\\algos\\stacks\\'   
+
 
 prob = 0.2
 
 im = Image.open(path_file,'r') # 20170123185233_IMG_9108.JPG  myfile.png
 pix_val = list(im.getdata())
-# print(pix_val)
+print(im.mode)
+print(im.getbands())
 #print(len(pix_val))
 width,height = im.size
 #pix_val_flat = [x for sets in pix_val for x in sets]
-f = open(path+'image.txt','w')
-g= open(path+'imagedim.txt','w')
+#f = open(path+'image.txt','w')
+#g= open(path+'imagedim.txt','w')
 
 #f.close()
 new_image_list_R = []
 new_image_list_G = []
 new_image_list_B = []
+
+print(im.getpixel((10,11)))
+
+'''
 for y in range(height):
     for x in range(width):
         RGB = im.getpixel((x,y))
+
+        print(RGB)
 
         R,G,B = RGB
         G = G * 1.3
@@ -59,8 +66,9 @@ for y in range(height):
        # f.write("\n")
        # g.write(str(x)+","+str(y))
        # g.write("\n")      
-f.close()
-g.close()
+'''       
+#f.close()
+#g.close()
 
 os.chdir(path)
 #string_filename = 'image.txt'
@@ -71,10 +79,10 @@ os.chdir(path)
 im2 = Image.new(im.mode,im.size)
 #im2.putdata(pix_val)
 im2.putdata(new_image_list_R)
-print(tempR)
+#print(tempR)
 print(new_image_list_R == pix_val)
 os.chdir(path)
-im2.save('parrots_green.png',format='PNG')
+#im2.save('parrots_green.png',format='PNG')
 
 #gs_image = im2.convert(mode='L')
 #gs_image.save('koala_grayscale.jpg')
