@@ -80,5 +80,33 @@ im2.save('parrots_green.png',format='PNG')
 #gs_image.save('koala_grayscale.jpg')
 
 '''
+Algorithms
+The mean and variance parameters for 'gaussian', 'localvar', and 'speckle' noise types are always specified as if the 
+image were of class double in the range [0, 1]. If the input image is a different class, the imnoise
+ function converts the image to double, adds noise according to the specified type and parameters, clips pixel values to the range 
+ [0, 1], and then converts the noisy image back to the same class as the input.
 
+The Poisson distribution depends on the data type of input image I:
+If I is double precision, then input pixel values are interpreted as means of Poisson distributions scaled up by 1e12. For example, if an input pixel has the value 5.5e-12, then the corresponding output pixel will be generated from a Poisson distribution with mean of 5.5 and then scaled down by 1e12.
+If I is single precision, the scale factor used is 1e6.
+If I is uint8 or uint16, then input pixel values are used directly without scaling. For example, 
+if a pixel in a uint8 input has the value 10, then the corresponding output pixel will be generated from a Poisson distribution with mean 10.
+
+To add 'salt & pepper' noise with density d to an image, imnoise first assigns each pixel a 
+random probability value from a standard uniform distribution on the open interval (0, 1).
+For pixels with probability value in the range (0, d/2), the pixel value is set to 0. 
+The number of pixels that are set to 0 is approximately d*numel(I)/2.
+For pixels with probability value in the range [d/2, d), the pixel value is set to the maximum value of the image data type. The number of pixels that are set to the maximum value is approximately d*numel(I)/2.
+For pixels with probability value in the range [d, 1), the pixel value is unchanged.
+
+J = imnoise(I,'gaussian')
+J = imnoise(I,'gaussian',m)
+J = imnoise(I,'gaussian',m,var_gauss)
+J = imnoise(I,'localvar',var_local)
+J = imnoise(I,'localvar',intensity_map,var_local)
+J = imnoise(I,'poisson')
+J = imnoise(I,'salt & pepper')
+J = imnoise(I,'salt & pepper',d)
+J = imnoise(I,'speckle')
+J = imnoise(I,'speckle',var_speckle)
 '''
