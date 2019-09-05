@@ -1,0 +1,63 @@
+The array is a strong programming tool used in computing. They follow a special way of organising data in computer's memory.
+Let us use an example of a road street dotted by houses on either sides to grasp the concept
+of an array. The street is named as "Rainbow street" and has 14 houses, seven on
+either side of the road. See Diagram
+
+Every house has a unique address which helps anybody to locate it easily. 
+The address of each house consists of two parts: the street name and the number.
+Every house shares the same street name "Rainbow street" and has a number 1,2,3 etc. Thus the unique address for house 1
+would be "RainbowStreet 1" and so on.
+
+Let us assume that the water supply department in the vicinity decides to bill every house on Rainbow street for every litre of water
+consumed per month. To generate a computerised bill, the department will have to write a program and define 14 different variables 
+representing each house. Since the amount of money charged would be a decimal number we will require 14 different variables, each 
+containing a floating-point value denoting the amount to be paid by each house.
+Thus in python we will have to write a program something like, B1 = 125.22, B2 = 234.56,....,B14 = 345.81
+
+Instead of this cumbersome way of writing a Python program, we will use an array called rainbow_street_bill and assign it a length of 14.
+
+We will return back to this example after we learn few more things about how these arrays are handled in the low-level computer 
+architecture. This understanding is crucial to our learning of arrays and lists that we will encounter later.
+
+The memory of computer consists of bits of information. A bit or a binary digit can hold only two types of values 0 or 1. If we group 8 such bits
+then we get a byte. A computer system typically will have lots of bytes of memory. Whenever we store any information be it an integer or 
+decimal or a string, this information gets stored in a byte or group of bytes. The information is tracked using memory addresses. 
+Thus each byte will have a unique address. This address is a number and is represented in binary form. Thus we can have have some data 
+in byte #101 and something else in byte #211. The following diagram depicts one such portion of computer's memory with the bytes
+of memory in contiguous memory addresses. For a computer, it takes contant time to retrieve byte #5001 and byte #100. 
+
+Now,coming back to our rainbow street example, if we have 14 houses and need to store the water bill amount as integers, we will require 
+14 different memory addresses. Taking advantage of the contiguous memory locations, we introduce an array that will store these 14 different 
+integer values.  In the diagram below, we have an array starting with index 0 and ending with index 113. Since,Python follows zero-based
+indexing we have begun with index 0. The value at index 0 is 560 which indicates that the house number 1 on the Raninbow street will have to
+pay an amount worth rupees 560 as the water bill.
+
+Python has a module named array that supports storage of primitive data types like integers and floats.
+To define the array for the Rainbowstreet bill amounts we will have to write the following piece of code:
+
+import array
+rainbow_street = array.array('i',[560,900,159,785,115,269,300,178,635,542,667,190,450,815])
+Here 'i' is a typecode that tells us the type of data that will be stored in the array. 'i' denotes signed integers
+which takes up 4 bytes each for every integer.
+
+The array module cannot be used to create arrays of user-defined data types. Such a requirement can be fulfilled by a module called 
+ctypes.
+
+
+
+
+
+
+
+
+
+
+
+The array declaration can be done as follows: 
+rainbow_street_bill = array('f',[0]*140)
+Here we are telling Python interpreter to create a create an array variable rainbow_street_bill with 140 
+
+
+The street name corresponds to the array name and the number corresponds to the suffix.
+The house numer 12 can be denoted as RainbowStreet[12] where 12 is the suffix of the array RainbowStreet.
+
